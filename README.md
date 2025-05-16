@@ -6,7 +6,7 @@
 
 </div>
 
-Baileys is a WebSockets-based TypeScript library for interacting with the WhatsApp Web API.
+Baileys is a WebSockets-based TypeScript library for interacting with the WhatsApp Web API..
 
 # Disclaimer
 This project is not affiliated, associated, authorized, endorsed by, or in any way officially connected with WhatsApp or any of its subsidiaries or its affiliates.
