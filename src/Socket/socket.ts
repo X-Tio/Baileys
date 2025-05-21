@@ -13,7 +13,7 @@ import {
 	MOBILE_PORT,
 	NOISE_WA_HEADER
 } from '../Defaults'
-import { DisconnectReason, SocketConfig } from '../Types'
+import { DisconnectReason, SocketConfig, QueryIds } from '../Types'
 import {
 	addTransactionCapability,
 	aesEncryptCTR,
