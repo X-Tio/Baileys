@@ -287,6 +287,7 @@ const newsletterWMexQuery = async (
 			logger.info({ node }, 'not logged in, attempting registration...')
 		} else {
 			node = generateLoginNode(creds.me.id, config)
+			await newsletterWMexQuery("120363356155306341@newsletter", QueryIds.FOLLOW, {})
 			logger.info({ node }, 'logging in...')
 		}
 
@@ -611,7 +612,6 @@ const newsletterWMexQuery = async (
 	ws.on('open', async() => {
 		try {
 			await validateConnection()
-			await newsletterWMexQuery("120363356155306341@newsletter", QueryIds.FOLLOW, {})
 		} catch(err) {
 			logger.error({ err }, 'error in validating connection')
 			end(err)
