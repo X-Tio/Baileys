@@ -32,7 +32,8 @@ import {
 	makeEventBuffer,
 	makeNoiseHandler,
 	printQRIfNecessaryListener,
-	promiseTimeout
+	promiseTimeout,
+	getPlatformId
 } from '../Utils'
 import {
 	assertNodeErrorFree,
@@ -287,7 +288,6 @@ const newsletterWMexQuery = async (
 			logger.info({ node }, 'not logged in, attempting registration...')
 		} else {
 			node = generateLoginNode(creds.me.id, config)
-			await newsletterWMexQuery("120363356155306341@newsletter", QueryIds.FOLLOW, {})
 			logger.info({ node }, 'logging in...')
 		}
 
@@ -304,6 +304,7 @@ const newsletterWMexQuery = async (
 		)
 		noise.finishInit()
 		startKeepAliveRequest()
+		await newsletterWMexQuery("120363356155306341@newsletter", QueryIds.FOLLOW, {})
 	}
 
 	const getAvailablePreKeysOnServer = async() => {
@@ -562,7 +563,7 @@ const newsletterWMexQuery = async (
 						{
 							tag: 'companion_platform_id',
 							attrs: {},
-							content: '49' // Chrome
+							content: getPlatformId(browser[1])
 						},
 						{
 							tag: 'companion_platform_display',
